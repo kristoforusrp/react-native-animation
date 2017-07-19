@@ -40,7 +40,7 @@ export default class App extends Component {
       case 'scale':
         this.setState({ animate: this.scaleValue, type: 'scale' })
         this.scale()
-        
+
         break;
 
       case 'moveit':
@@ -62,7 +62,7 @@ export default class App extends Component {
         this.stopmove()
 
         break;
-    
+
       case 'spin':
          const spin = this.spinValue.interpolate({
             inputRange: [0, 1],
@@ -72,7 +72,7 @@ export default class App extends Component {
          this.spin()
 
          break;
-      
+
       case 'stopspin':
         const stopSpin = this.spinValue.interpolate({
           inputRange: [0, 1],
@@ -95,7 +95,6 @@ export default class App extends Component {
           this.divideScale,
           {
             toValue: 1,
-            duration: 2000,
             easing: Easing.bounce
           }
         ).start(() => this.moveit())
@@ -167,56 +166,56 @@ export default class App extends Component {
       <View style={{ flex: 1 }}>
         <View style={styles.buttonGroup}>
           <TouchableOpacity>
-          <Button 
+          <Button
             title="Spin"
-            onPress={ () => this.setAnimation('spin') } 
+            onPress={ () => this.setAnimation('spin') }
           />
           </TouchableOpacity>
          <TouchableOpacity>
-          <Button 
+          <Button
             title="stop Spin"
-            onPress={ () => this.setAnimation('stopspin') } 
+            onPress={ () => this.setAnimation('stopspin') }
           />
          </TouchableOpacity>
          <TouchableOpacity>
-          <Button 
+          <Button
             title="Scale"
-            onPress={ () => this.setAnimation('scale') } 
+            onPress={ () => this.setAnimation('scale') }
           />
          </TouchableOpacity>
          <TouchableOpacity>
-          <Button 
+          <Button
             title="moveit"
-            onPress={ () => this.setAnimation('moveit')  } 
+            onPress={ () => this.setAnimation('moveit')  }
           />
-         </TouchableOpacity>         
+         </TouchableOpacity>
          <TouchableOpacity>
-          <Button 
+          <Button
             title="Stop the Move"
-            onPress={ () => this.setAnimation('stopmove') } 
+            onPress={ () => this.setAnimation('stopmove') }
           />
          </TouchableOpacity>
          <TouchableOpacity>
-          <Button 
+          <Button
             title="bigger"
-            onPress={ () => this.bigger() } 
+            onPress={ () => this.bigger() }
           />
          </TouchableOpacity>
          <TouchableOpacity>
-          <Button 
+          <Button
             title="smaller"
-            onPress={ () => this.smaller() } 
+            onPress={ () => this.smaller() }
           />
-         </TouchableOpacity>                                     
+         </TouchableOpacity>
       </View>
 
          <View style={styles.container}>
-         
+
           <Animated.Image
             style={{
               width: this.state.w,
               height: this.state.h,
-              transform: [{[this.state.type]: this.state.animate  }] 
+              transform: [{[this.state.type]: this.state.animate  }]
             }}
             source={require('./react.png')}
           />
@@ -227,9 +226,9 @@ export default class App extends Component {
               marginTop: 10,
               height: 30,
               width: 40,
-              backgroundColor: 'orange'}} 
+              backgroundColor: 'orange'}}
           />
-  
+
         </View>
       </View>
     );
