@@ -95,6 +95,7 @@ export default class App extends Component {
           this.divideScale,
           {
             toValue: 1,
+            duration: 1000,
             easing: Easing.bounce
           }
         ).start(() => this.moveit())
